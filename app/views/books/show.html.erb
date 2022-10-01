@@ -33,19 +33,9 @@
         <td><%= book_comment.comment %></td>
         <% if book_comment.user == current_user %>
       <td><%= link_to "Destroy", book_book_comment_path(book_comment.book, book_comment), method: :delete, class: "btn btn-sm btn-danger" %></td>
-     
-      <% if @book.favorited_by?(current_user) %>
-      <td><%= link_to book_favorites_path(@book), method: :delete do %>
-        ♥<%= @book.favorites.count %> いいね
-      <% end %>
-       </td>
-    <% else %>
-    <td>
-      <%= link_to book_favorites_path(@book), method: :post do %>
-        ♡<%= @book.favorites.count %> いいね
-      <% end %>
-    </td>
-  <% end %>
+     <div id="favorite_btn_<%= @book.id %>">
+     <%= render 'favorites/favorite', book: @book %>
+      </div>
         <% end %>
         <% end %>
       </tr>
