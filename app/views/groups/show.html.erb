@@ -1,4 +1,5 @@
 <div class='container px-5 px-sm-0'>
+	<%= render 'layouts/errors', obj: @book %>
   <div class='row'>
     <div class='col-md-3'>
       <h2>User info</h2>
@@ -10,7 +11,7 @@
       <h2>Group Detail</h2>
       <table class='table table-hover table-inverse'>
         <tr>
-          <td><%= attachment_image_tag(@group, :image, :fill, 50, 50, fallback: "no-image-icon.jpg") %></td>
+          <td><%= image_tag @group.get_image, size: '50x50' %></td>
           <td><%= @group.name %></td>
           <td><%= @group.introduction %></td>
           <td>
