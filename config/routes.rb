@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:index,:show,:edit,:update] do
    get "search", to: "users#search"
+   resources :groups
+    get "join" => "groups#join"
     resource :relationships, only: [:create, :destroy]
   	get 'followings' => 'relationships#followings', as: 'followings'
   	get 'followers' => 'relationships#followers', as: 'followers'

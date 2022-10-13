@@ -30,6 +30,13 @@ class GroupsController < ApplicationController
   def edit
   end
 
+  def destroy
+    @group = Group.find(params[:id])
+    @group.users.delete(current_user)
+    redirect_to groups_path
+  end
+
+
   def update
     if @group.update(group_params)
       redirect_to groups_path
