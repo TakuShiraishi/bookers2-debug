@@ -1,4 +1,6 @@
 <h1>Nagano Cake</h2>
+![Nagano CAke](https://user-images.githubusercontent.com/110590240/198199250-f24de83d-7063-42f8-ac73-8ebb4102023e.png)
+
 
 <h2>概要</h2>
 長野県にある小さな洋菓子店「ながのCAKE」の商品の通販するためのECサイト開発。
